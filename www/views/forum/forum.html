@@ -1,4 +1,24 @@
 <ion-view view-title="Forum">
     <ion-content>
+        <div class="list card" ng-repeat="forum in forums">
+            <div class="item item-avatar" >
+                <h2>{{ forum.title }}</h2>
+                <p>by {{ forum.user }}</p>
+            </div>
+            <div class="item item-body">
+                <p>{{ forum.forum }}</p>
+                <p><span ng-click="toggleShowReplies(forum.id)">
+                    <strong>{{ 0 + forum.replies.length }} replies.</strong>
+                </span></p>
+                <div class="list" ng-hide="!forum.showReplies">
+                    <span ng-repeat="reply in forum.replies" class="item item-icon-left item-icon-right">
+                        <i class="icon ion-ios-person"></i>
+                        <small><strong> {{ reply.user }}</strong></small>
+                        <small>{{ reply.content }}</small>
+                        <i class="icon ion-ios-heart-outline"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

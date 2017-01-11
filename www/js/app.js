@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('App', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('App', ['ionic', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,10 +51,11 @@ angular.module('App', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/forum',
       views: {
         'forum-tab': {
-          templateUrl: 'views/forum/forum.html'
+          templateUrl: 'views/forum/forum.html',
+          controller: 'ForumController'
         }
       }
-    })
+  })
   .state('tabs.mind', {
     url: '/health/mind',
     views: {
@@ -74,4 +75,41 @@ angular.module('App', ['ionic', 'starter.controllers', 'starter.services'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tabs/health/body');
 
+})
+.factory('Forums', function() {
+  return [
+        {
+            'id': 1,
+            'title': 'How to lose weight?',
+            'forum': "I've been looking for a safe way to lose some pounds. Help please.",
+            'user': 'Cassius Winston',
+            'showReplies': false,
+            'replies': [
+              {
+                'id': 1,
+                'content': 'Eat less, exercise more.',
+                'user': 'Mile Bridges'
+              },
+              {
+                'id': 2,
+                'content': 'Do not stay late at night.',
+                'user': 'Nick Ward'
+              }
+            ]
+        },
+        {
+            'id': 2,
+            'title': 'How to gain weight?',
+            'forum': "I've been eating a lot and work out like crazy but nothing seems to work. Help please.",
+            'showReplies': false,
+            'user': 'Tum Tum Nairn'
+        },
+        {
+            'id': 3,
+            'title': 'How to recover from office syndrome?',
+            'forum': "I'm a programmer who sit for at least 12 hours a day. My back and shoulder are killing me. Help please.",
+            'showReplies': false,
+            'user': "Le'Veon Bell"
+        }
+    ]
 });
