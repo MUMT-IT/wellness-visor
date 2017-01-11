@@ -34,51 +34,44 @@ angular.module('App', ['ionic', 'starter.controllers', 'starter.services'])
   // setup an abstract state for the tabs directive
     .state('tabs', {
     url: '/tabs',
+    abstract: true,
     templateUrl: 'views/tabs/tabs.html'
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tabs.body', {
+    url: '/health/body',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'body-tab': {
+        templateUrl: 'views/health/body/records.html'
       }
     }
   })
-
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tabs.forum', {
+      url: '/forum',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'forum-tab': {
+          templateUrl: 'views/forum/forum.html'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
+  .state('tabs.mind', {
+    url: '/health/mind',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'mind-tab': {
+        templateUrl: 'views/health/mind/records.html'
+      }
+    }
+  })
+  .state('tabs.more', {
+    url: '/more',
+    views: {
+      'more-tab': {
+        templateUrl: 'views/more/more.html'
       }
     }
   });
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tabs');
+  $urlRouterProvider.otherwise('/tabs/health/body');
 
 });
