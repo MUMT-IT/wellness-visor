@@ -83,6 +83,7 @@ angular.module('App', ['ionic', 'starter.services'])
             'title': 'How to lose weight?',
             'forum': "I've been looking for a safe way to lose some pounds. Help please.",
             'user': 'Cassius Winston',
+            'pic': 'img/mike.png',
             'showReplies': false,
             'replies': [
               {
@@ -102,6 +103,7 @@ angular.module('App', ['ionic', 'starter.services'])
             'title': 'How to gain weight?',
             'forum': "I've been eating a lot and work out like crazy but nothing seems to work. Help please.",
             'showReplies': false,
+            'pic': 'img/max.png',
             'user': 'Tum Tum Nairn'
         },
         {
@@ -109,6 +111,7 @@ angular.module('App', ['ionic', 'starter.services'])
             'title': 'How to recover from office syndrome?',
             'forum': "I'm a programmer who sit for at least 12 hours a day. My back and shoulder are killing me. Help please.",
             'showReplies': false,
+            'pic': 'img/ben.png',
             'user': "Le'Veon Bell"
         }
     ]
