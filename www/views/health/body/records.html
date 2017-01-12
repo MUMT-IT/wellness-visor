@@ -7,26 +7,62 @@
                 <p>Google Corp.</p>
                 <p>Last Checked 10 Jan. 2016</p>
             </div>
+            <div class="item item-icon-right item-icon-left" ng-click="toggleShowSymbolDesc()">
+                <i class="icon ion-ios-information-outline"></i>
+                Learn about the symbols
+                <i class="icon ion-ios-arrow-right" ng-if="!showSymbolDesc"></i>
+                <i class="icon ion-ios-arrow-down" ng-if="showSymbolDesc"></i>
+            </div>
+            <div class="list list-inset" ng-hide="!showSymbolDesc">
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-graph-up-right" style="color: red;"></i>
+                    the values are trending up in a concerning way.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-graph-up-right" style="color: green;"></i>
+                    the values are trending up in a good way.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-minus" style="color: green;"></i>
+                    the values remain relatively stable or in a reference range.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-graph-down-right" style="color: red;"></i>
+                    the values are trending down in a concerning way.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-graph-down-right" style="color: green;"></i>
+                    the values are trending down in a good way.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-up-b" style="color: red;"></i>
+                    a single value is higher than the reference range.
+                </div>
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-arrow-down-b" style="color: dodgerblue;"></i>
+                    a single value is lower than the reference range.
+                </div>
+            </div>
             <div class="item item-divider">
                 Body Shape
             </div>
-            <a href="#/" class="item item-icon-right">
+            <a href="#/tabs/health/body/weight" class="item item-icon-right">
                 Weight
                 <span class="item-note" style="color: green;">
                     76.7kg
                 </span>
-                <i class="icon ion-minus" style="color: green;"></i>
+                <i class="icon ion-arrow-graph-up-right" style="color: red;"></i>
             </a>
             <a href="#/" class="item item-icon-right">
                 Height
-                <span class="item-note" style="color: green;">189cm
+                <span class="item-note" style="color: green;">175cm
                 </span>
                 <i class="icon ion-minus" style="color: green;"></i>
             </a>
             <a href="#/" class="item item-icon-right">
                 BMI
                 <span class="item-note" style="color: red;">
-                    <strong>25.4</strong>
+                    <strong>25</strong>
                 </span>
                 <i class="icon ion-arrow-up-b" style="color: red;"></i>
             </a>
@@ -52,26 +88,31 @@
             </div>
             <a href="#/" class="item item-icon-right">
                 Blood Sugar
-                <i class="icon ion-ios-arrow-right"></i>
+                <span class="item-note" style="color: green;"><strong>103</strong></span>
+                <i class="icon ion-minus" style="color: green;"></i>
             </a>
             <a href="#/" class="item item-icon-right">
                 Triglyceride
-                <i class="icon ion-ios-arrow-right"></i>
+                <span class="item-note" style="color: red;"><strong>213</strong></span>
+                <i class="icon ion-arrow-graph-up-right" style="color: red;"></i>
             </a>
             <a href="#/" class="item item-icon-right">
                 HDL
-                <i class="icon ion-ios-arrow-right"></i>
+                <span class="item-note" style="color: red;"><strong>34</strong></span>
+                <i class="icon ion-arrow-graph-down-right" style="color: red;"></i>
             </a>
             <a href="#/" class="item item-icon-right">
                 LDL
-                <i class="icon ion-ios-arrow-right"></i>
+                <span class="item-note" style="color: red;"><strong>183</strong></span>
+                <i class="icon ion-arrow-up-b" style="color: red;"></i>
             </a>
             <div class="item item-divider">
                 Uric Acid
             </div>
             <a href="#/" class="item item-icon-right">
                 Uric
-                <i class="icon ion-ios-arrow-right"></i>
+                <span class="item-note" style="color: green;"><strong>103</strong></span>
+                <i class="icon ion-minus" style="color: green;"></i>
             </a>
         </div>
     </ion-content>

@@ -1,0 +1,39 @@
+<ion-view title="Weight Records">
+    <ion-content>
+        <div class="list">
+            <div class="item" ng-hide="showSuggestion">
+                <canvas id="line" height="230" class="chart chart-line"
+                    chart-data="data" chart-labels="labels"
+                    chart-options="chartOptions"
+                    chart-dataset-override="datasetOverride"
+                    chart-colors="colors" chart-series="series">
+                </canvas>
+            </div>
+            <div class="button-bar" ng-hide="showSuggestion">
+                <a class="button button-light">Weeks</a>
+                <a class="button button-stable">Months</a>
+                <a class="button button-light">Years</a>
+            </div>
+            <div ng-click="toggleShowSuggestion()" class="item item-icon-left item-icon-right item-text-wrap">
+                <i class="icon ion-ios-information-outline" style="color: red;"></i>
+                You seem to be overweighted.
+                <small ng-hide="showSuggestion">Learn about our suggestion...</small>
+                <i ng-if="!showSuggestion" class="icon ion-ios-arrow-right"></i>
+                <i ng-if="showSuggestion" class="icon ion-ios-arrow-down"></i>
+            </div>
+            <div ng-hide="!showSuggestion" class="item item-text-wrap">
+                <p>The most important part is to cut back on sugars and starches (carbs).
+                    These are the foods that stimulate secretion of insulin the most. If you didn’t know already, insulin is the main fat storage hormone in the body.
+                    When insulin goes down, fat has an easier time getting out of the fat stores and the body starts burning fats instead of carbs.
+                    Another benefit of lowering insulin is that your kidneys shed excess sodium and water out of your body, which reduces bloat and unnecessary water weight (1, 2).
+                    It is not uncommon to lose up to 10 pounds (sometimes more) in the first week of eating this way, both body fat and water weight.
+                    This is a graph from a study comparing low-carb and low-fat diets in overweight/obese women (3).</p>
+            </div>
+            <div class="item item-text-wrap item-avatar item-icon-right">
+                <img src="img/mike.png">
+                <p>Comments here...</p>
+                <i class="icon ion-ios-paperplane"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
