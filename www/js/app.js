@@ -43,6 +43,14 @@ angular.module('App', ['ionic', 'starter.services'])
     url: '/health/body',
     views: {
       'body-tab': {
+        templateUrl: 'views/health/body/index.html'
+      }
+    }
+  })
+  .state('tabs.bodyrec', {
+    url: '/health/body/records',
+    views: {
+      'body-tab': {
         templateUrl: 'views/health/body/records.html'
       }
     }
@@ -60,7 +68,15 @@ angular.module('App', ['ionic', 'starter.services'])
     url: '/health/mind',
     views: {
       'mind-tab': {
-        templateUrl: 'views/health/mind/records.html'
+        templateUrl: 'views/health/mind/index.html'
+      }
+    }
+  })
+  .state('tabs.services', {
+    url: '/services',
+    views: {
+      'services-tab': {
+        templateUrl: 'views/services/index.html'
       }
     }
   })
